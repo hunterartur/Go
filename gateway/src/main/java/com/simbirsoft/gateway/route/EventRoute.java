@@ -21,7 +21,10 @@ public class EventRoute {
                         route -> route.path(
                                         "/events",
                                         "/event/**",
-                                        "/event**")
+                                        "/event**",
+                                        "/event-templates",
+                                        "/event-template",
+                                        "/event-template/**")
                                 .filters(
                                         filter -> filter.filter(authFilter)
                                 )

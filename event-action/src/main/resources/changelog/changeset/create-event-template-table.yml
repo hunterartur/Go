@@ -1,0 +1,40 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_table_event_template
+      author: aishmaev
+      changes:
+        - createTable:
+            tableName: event_templates
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  autoIncrement: false
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: title
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: icon
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: image
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: event_type
+                  type: varchar(255)
+                  constraints:
+                    nullable: false

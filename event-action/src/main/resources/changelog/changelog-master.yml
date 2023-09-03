@@ -1,3 +1,5 @@
 databaseChangeLog:
   - include:
       file: changelog/changeset/init.yml
+  - include:
+      file: changelog/changeset/create-event-template-table.yml
