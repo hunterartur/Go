@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_users
+      author: aishmaev
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  value: f51fa3cb-1a5d-403a-b836-2ece480981d3
+              - column:
+                  name: email
+                  value: go1@simbirsoft.com
+              - column:
+                  name: password
+                  value: MTIzNDU=
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  value: 1448d95b-4916-497b-b07d-b82c32b8696e
+              - column:
+                  name: email
+                  value: go2@simbirsoft.com
+              - column:
+                  name: password
+                  value: NTQzMjE=
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  value: fc1a6ba2-7e97-4694-85eb-91612c0ad9a8
+              - column:
+                  name: email
+                  value: go3@simbirsoft.com
+              - column:
+                  name: password
+                  value: MTIzNDU2Nzg=

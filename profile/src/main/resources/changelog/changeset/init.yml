@@ -1,0 +1,88 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_table_cities
+      author: aishmaev
+      changes:
+        - createTable:
+            tableName: cities
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  autoIncrement: false
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: title
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: create_table_user_events
+      author: aishmaev
+      changes:
+        - createTable:
+            tableName: user_events
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  autoIncrement: false
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: action
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: event_id
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: create_table_profile
+      author: aishmaev
+      changes:
+        - createTable:
+            tableName: profiles
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  autoIncrement: false
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: email
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: image_url
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: city_id
+                  type: uuid
+                  constraints:
+                    foreignKeyName: profile_city_fk
+                    referencedTableName: cities
+                    referencedColumnNames: id
+              - column:
+                  name: event_ids
+                  type: uuid[]

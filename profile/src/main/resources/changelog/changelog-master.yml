@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: changelog/changeset/init.yml
+  - include:
+      file: changelog/changeset/create-profiles-and-cities.yml

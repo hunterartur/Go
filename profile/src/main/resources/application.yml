@@ -1,0 +1,32 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: profile
+  liquibase:
+    change-log: classpath:changelog/changelog-master.yml
+    driver-class-name:
+    user: ${datasource.username}
+    password: ${datasource.password}
+    url: jdbc:postgresql://${datasource.url}:${datasource.port}/${datasource.name}
+    default-schema: ${datasource.schema}
+  r2dbc:
+    name: ${datasource.name}
+    username: ${datasource.username}
+    password: ${datasource.password}
+    url: r2dbc:postgresql://${datasource.url}:${datasource.port}/${datasource.name}?currentSchema=${datasource.schema}
+  jpa:
+    show-sql: true
+
+logging:
+  level:
+    org.springframework.data.r2dbc: DEBUG
+
+datasource:
+  username: ${DB_USERNAME:go}
+  password: ${DB_PASSWORD:gogogo}
+  name: ${DB_NAME:go}
+  url: ${DB_URL:localhost}
+  port: ${DB_PORT:5433}
+  schema: ${DB_SCHEMA:profile}

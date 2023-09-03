@@ -1,0 +1,81 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_table_live_date
+      author: aishmaev
+      changes:
+        - createTable:
+            tableName: live_date
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  autoIncrement: false
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: start_event_date
+                  type: timestamp with time zone
+                  constraints:
+                    nullable: true
+              - column:
+                  name: registration_expired
+                  type: timestamp with time zone
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: create_table_event
+      author: aishmaev
+      changes:
+        - createTable:
+            tableName: event
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  autoIncrement: false
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: title
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: text
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: image_url
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: event_type
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: author_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+              - column:
+                  name: members
+                  type: uuid[]
+                  constraints:
+                    nullable: true
+              - column:
+                  name: live_date_id
+                  type: uuid
+                  constraints:
+                    foreignKeyName: event_live_date_fk
+                    referencedTableName: live_date
+                    referencedColumnNames: id
+              - column:
+                  name: city_id
+                  type: uuid
+                  constraints:
+                    nullable: false

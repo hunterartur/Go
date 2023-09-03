@@ -1,0 +1,117 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_cities
+      author: aishmaev
+      changes:
+        - insert:
+            tableName: cities
+            columns:
+              - column:
+                  name: id
+                  value: 92ceea54-d555-4427-a3ad-cd7916ecb620
+              - column:
+                  name: title
+                  value: Уфа
+        - insert:
+            tableName: cities
+            columns:
+              - column:
+                  name: id
+                  value: edb8194b-9778-4d99-b239-ecf087d372f0
+              - column:
+                  name: title
+                  value: Питер
+        - insert:
+            tableName: cities
+            columns:
+              - column:
+                  name: id
+                  value: 631db891-ce34-4848-87b0-af8738be09ec
+              - column:
+                  name: title
+                  value: Ульяновск
+        - insert:
+            tableName: cities
+            columns:
+              - column:
+                  name: id
+                  value: c1f20aff-fe8c-45c7-9769-4b796213940f
+              - column:
+                  name: title
+                  value: Москва
+        - insert:
+            tableName: cities
+            columns:
+              - column:
+                  name: id
+                  value: 510138a2-70d3-4453-8da7-fba5cc27347d
+              - column:
+                  name: title
+                  value: Краснодар
+        - insert:
+            tableName: cities
+            columns:
+              - column:
+                  name: id
+                  value: 47bc3840-7e7e-4814-9088-67652a5eb929
+              - column:
+                  name: title
+                  value: Казань
+  - changeSet:
+      id: create_profiles
+      author: aishmaev
+      changes:
+        - insert:
+            tableName: profiles
+            columns:
+              - column:
+                  name: id
+                  value: f51fa3cb-1a5d-403a-b836-2ece480981d3
+              - column:
+                  name: first_name
+                  value: Артур
+              - column:
+                  name: last_name
+                  value: Артуров
+              - column:
+                  name: email
+                  value: go1@simbirsoft.com
+              - column:
+                  name: city_id
+                  value: 92ceea54-d555-4427-a3ad-cd7916ecb620
+        - insert:
+            tableName: profiles
+            columns:
+              - column:
+                  name: id
+                  value: 1448d95b-4916-497b-b07d-b82c32b8696e
+              - column:
+                  name: first_name
+                  value: Айдар
+              - column:
+                  name: last_name
+                  value: Айдаров
+              - column:
+                  name: email
+                  value: go1@simbirsoft.com
+              - column:
+                  name: city_id
+                  value: 510138a2-70d3-4453-8da7-fba5cc27347d
+        - insert:
+            tableName: profiles
+            columns:
+              - column:
+                  name: id
+                  value: fc1a6ba2-7e97-4694-85eb-91612c0ad9a8
+              - column:
+                  name: first_name
+                  value: Саша
+              - column:
+                  name: last_name
+                  value: Сашев
+              - column:
+                  name: email
+                  value: go1@simbirsoft.com
+              - column:
+                  name: city_id
+                  value: 47bc3840-7e7e-4814-9088-67652a5eb929

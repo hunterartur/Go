@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_table_images
+      author: aishmaev
+      changes:
+        - createTable:
+            tableName: images
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  autoIncrement: false
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: data
+                  type: text
+                  constraints:
+                    nullable: true
